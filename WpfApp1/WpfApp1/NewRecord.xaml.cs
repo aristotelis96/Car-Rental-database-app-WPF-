@@ -26,7 +26,7 @@ namespace WpfApp1
                 
             App.RunCommand("INSERT INTO employee (IRS_number, firstname, lastname)" +
                            "values" +
-                           "(" + int.Parse(IRSNumberTextBox.Text) + ", " + FirstNameTextBox.Text + ", " + LastNameTextBox.Text + ");");
+                           "(" + int.Parse(IRSNumberTextBox.Text) + ", '" + FirstNameTextBox.Text + "', '" + LastNameTextBox.Text + "');");
             App.RunCommand("select * from employee");
             App.DataGrid.DataContext = App.DataTable;
             MessageBox.Show("Employee added succesfully!", "Success");
