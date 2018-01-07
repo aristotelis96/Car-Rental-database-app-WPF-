@@ -17,16 +17,18 @@ namespace WpfApp1
       
         public void InitializeTablesComboBox()
         {
-            TablesComboBox.Items.Add("Employees");
-            TablesComboBox.Items.Add("Stores");
-            TablesComboBox.Items.Add("Vehicles");
-            TablesComboBox.Items.Add("Customers");
+            TablesComboBox.Items.Add("Employee");
+            TablesComboBox.Items.Add("Store");
+            TablesComboBox.Items.Add("Vehicle");
+            TablesComboBox.Items.Add("Customer");
             TablesComboBox.SelectedIndex = 0;
         }
 
         private void TablesComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
+            App.DataGrid = DataGrid;
+            App.RefreshDataGrid();
         }
 
         private void Add_OnClick(object sender, RoutedEventArgs e)

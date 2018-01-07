@@ -78,11 +78,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="20" Margin="0, 2"/>
-                <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="20" Margin="0, 2"/>
-                <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2"/>
-                <Label Grid.Row="3" Grid.Column="0" Content="Driver Licence:" FontSize="20" Margin="0, 2"/>
-                <Label Grid.Row="4" Grid.Column="0" Content="Social Security Number:" FontSize="20" Margin="0, 2"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Store ID:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="5" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="6" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="7" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>

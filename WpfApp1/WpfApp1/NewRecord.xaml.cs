@@ -29,7 +29,7 @@ namespace WpfApp1
             {
                 try
                 {
-                    App.RunCommand("insert into employee (irs_number, lastname, firstname, driverlicense, socialsecutirynumber, street, streetnumber, postalcode, city)" +
+                    App.RunCommand("insert into employee (irs_number, lastname, firstname, driverlicense, socialsecuritynumber, street, streetnumber, postalcode, city)" +
                                    "values" +
                                    "(" + int.Parse(IRSNumberTextBox.Text) + "," +
                                    "'" + LastNameTextBox.Text + "'," +
