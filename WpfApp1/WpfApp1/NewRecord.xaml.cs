@@ -59,25 +59,33 @@ namespace WpfApp1
 
         }
 
+        private void IRSNumberTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (IRSNumberTextBox.Text == "")
+                EmpAst0.Visibility = Visibility.Visible;
+            else
+            {
+                if (!int.TryParse(IRSNumberTextBox.Text, out var n))
+                {
+                    MessageBox.Show("IRS Number should be a numeric value.", "Error");
+                    IRSNumberTextBox.Text = "";
+                    return;
+                }
+                EmpAst0.Visibility = Visibility.Collapsed;
+            }
+        }
+
         private void FirstNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
         {
             if (FirstNameTextBox.Text == "")
-                EmpAst0.Visibility = Visibility.Visible;
-            else
-                EmpAst0.Visibility = Visibility.Collapsed;
-        }
-
-        private void LastNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
-        {
-            if (LastNameTextBox.Text == "")
                 EmpAst1.Visibility = Visibility.Visible;
             else
                 EmpAst1.Visibility = Visibility.Collapsed;
         }
 
-        private void IRSNumberTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        private void LastNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
         {
-            if (IRSNumberTextBox.Text == "")
+            if (LastNameTextBox.Text == "")
                 EmpAst2.Visibility = Visibility.Visible;
             else
                 EmpAst2.Visibility = Visibility.Collapsed;
@@ -91,10 +99,43 @@ namespace WpfApp1
                 EmpAst3.Visibility = Visibility.Collapsed;
         }
 
+        private void SocialSecurityNumberTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(SocialSecurityNumberTextBox.Text, out var n))
+            {
+                MessageBox.Show("Social Security Number should be a numeric value.", "Error");
+                SocialSecurityNumberTextBox.Text = "";
+            }
+        }
+
+        private void StreetNumberTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(StreetNumberTextBox.Text, out var n))
+            {
+                MessageBox.Show("Street Number should be a numeric value.", "Error");
+                StreetNumberTextBox.Text = "";
+            }
+                
+        }
+
+        private void PostalCodeTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(PostalCodeTextBox.Text, out var n))
+            {
+                MessageBox.Show("Postal Code should be a numeric value.", "Error");
+                PostalCodeTextBox.Text = "";
+            }
+        }
+
         public bool Check()
         {
             if (RecordComboBox.SelectedItem.ToString() == "Employee")
             {
+                IRSNumberTextBox_OnLostFocus(null, null);
+                SocialSecurityNumberTextBox_OnLostFocus(null, null);
+                StreetNumberTextBox_OnLostFocus(null, null);
+                PostalCodeTextBox_OnLostFocus(null, null);
+
                 return !(EmpAst0.Visibility == Visibility.Collapsed &&
                        EmpAst1.Visibility == Visibility.Collapsed &&
                        EmpAst2.Visibility == Visibility.Collapsed &&
