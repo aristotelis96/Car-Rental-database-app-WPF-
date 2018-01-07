@@ -24,9 +24,19 @@ namespace WpfApp1
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
                 
-            App.RunCommand("INSERT INTO employee (IRS_number, firstname, lastname)" +
+            App.RunCommand("INSERT INTO employee (IRS_number, firstname, lastname, driverlicense, socialsecuritynumber," +
+                            "street,streetnumber,postalcode,city)" +
                            "values" +
-                           "(" + int.Parse(IRSNumberTextBox.Text) + ", '" + FirstNameTextBox.Text + "', '" + LastNameTextBox.Text + "');");
+                           "(" + int.Parse(IRSNumberTextBox.Text) + ", " +
+                           "'" + FirstNameTextBox.Text + "'," +
+                           "'" + LastNameTextBox.Text + "'," +
+                           "'" + DriverLicenceTextBox.Text + "'," +
+                           "'" + SocialSecurityNumberTextBox.Text + "'," +
+                           "'" + StreetTextBox.Text + "'," +
+                           "'" + NumberTextBox.Text + "'," +
+                           "'" + PostalCodeTextBox.Text + "'," +
+                           "'" + CityTextBox.Text + "');" );
+       
             App.RunCommand("select * from employee");
             App.DataGrid.DataContext = App.DataTable;
             MessageBox.Show("Employee added succesfully!", "Success");

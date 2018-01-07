@@ -12,8 +12,6 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            // ΓΕΙΑ ΣΟΥ γιαννη
-
             InitializeTablesComboBox();
             App.DataGrid = DataGrid;
             App.RefreshDataGrid();
