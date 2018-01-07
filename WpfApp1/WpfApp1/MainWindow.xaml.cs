@@ -12,7 +12,7 @@ namespace WpfApp1
         {
             InitializeComponent();
 
-            // ΓΕΙΑ ΣΟΥ ΑΡΗ
+            // ΓΕΙΑ ΣΟΥ γιαννη
 
             InitializeTablesComboBox();
             App.DataGrid = DataGrid;
