@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WpfApp1
@@ -23,19 +24,101 @@ namespace WpfApp1
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-                
-            App.RunCommand("INSERT INTO employee (IRS_number, firstname, lastname)" +
-                           "values" +
-                           "(" + int.Parse(IRSNumberTextBox.Text) + ", '" + FirstNameTextBox.Text + "', '" + LastNameTextBox.Text + "');");
-            App.RunCommand("select * from employee");
-            App.DataGrid.DataContext = App.DataTable;
-            MessageBox.Show("Employee added succesfully!", "Success");
-            Close();
+            if (Check()) return;
+
+
+            if (RecordComboBox.SelectedItem.ToString() == "Employee")
+            {
+                try
+                {
+                    App.RunCommand("insert into employee (irs_number, lastname, firstname, driverlicense, socialsecutirynumber, street, streetnumber, postalcode, city)" +
+                                   "values" +
+                                   "(" + int.Parse(IRSNumberTextBox.Text) + "," +
+                                   "'" + LastNameTextBox.Text + "'," +
+                                   "'" + FirstNameTextBox.Text + "'," +
+                                   "'" + DriverLicenceTextBox.Text + "'," +
+                                   +int.Parse(SocialSecurityNumberTextBox.Text) + "," +
+                                   "'" + StreetTextBox.Text + "'," +
+                                   +int.Parse(StreetNumberTextBox.Text) + "," +
+                                   +int.Parse(PostalCodeTextBox.Text) + "," +
+                                   "'" + CityTextBox.Text + "');");
+                    App.RefreshDataGrid();
+                    MessageBox.Show("Employee added succesfully!", "Success");
+                    Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Something went wrong!", "Error");
+                }
+
+            }
         }
 
         private void RecordComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void FirstNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (FirstNameTextBox.Text == "")
+                EmpAst0.Visibility = Visibility.Visible;
+            else
+                EmpAst0.Visibility = Visibility.Collapsed;
+        }
+
+        private void LastNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (LastNameTextBox.Text == "")
+                EmpAst1.Visibility = Visibility.Visible;
+            else
+                EmpAst1.Visibility = Visibility.Collapsed;
+        }
+
+        private void IRSNumberTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (IRSNumberTextBox.Text == "")
+                EmpAst2.Visibility = Visibility.Visible;
+            else
+                EmpAst2.Visibility = Visibility.Collapsed;
+        }
+
+        private void DriverLicenceTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (DriverLicenceTextBox.Text == "")
+                EmpAst3.Visibility = Visibility.Visible;
+            else
+                EmpAst3.Visibility = Visibility.Collapsed;
+        }
+
+        public bool Check()
+        {
+            if (RecordComboBox.SelectedItem.ToString() == "Employee")
+            {
+                return !(EmpAst0.Visibility == Visibility.Collapsed &&
+                       EmpAst1.Visibility == Visibility.Collapsed &&
+                       EmpAst2.Visibility == Visibility.Collapsed &&
+                       EmpAst3.Visibility == Visibility.Collapsed);
+            }
+            if (RecordComboBox.SelectedItem.ToString() == "Store")
+            {
+                return !(EmpAst0.Visibility == Visibility.Collapsed &&
+                       EmpAst1.Visibility == Visibility.Collapsed &&
+                       EmpAst2.Visibility == Visibility.Collapsed &&
+                       EmpAst3.Visibility == Visibility.Collapsed);
+            }
+            if (RecordComboBox.SelectedItem.ToString() == "Vehicle")
+            {
+                return !(EmpAst0.Visibility == Visibility.Collapsed &&
+                       EmpAst1.Visibility == Visibility.Collapsed &&
+                       EmpAst2.Visibility == Visibility.Collapsed &&
+                       EmpAst3.Visibility == Visibility.Collapsed);
+            }
+
+            return !(EmpAst0.Visibility == Visibility.Collapsed &&
+                   EmpAst1.Visibility == Visibility.Collapsed &&
+                   EmpAst2.Visibility == Visibility.Collapsed &&
+                   EmpAst3.Visibility == Visibility.Collapsed);
         }
     }
 }

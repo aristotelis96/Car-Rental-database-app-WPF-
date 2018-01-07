@@ -5,18 +5,64 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         WindowStartupLocation="CenterScreen"
         Height="550" Width="600"
-        Title="New Employee"
+        Title="New Record"
         mc:Ignorable="d">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
+        <ComboBox Grid.Row="0" x:Name="RecordComboBox" SelectionChanged="RecordComboBox_OnSelectionChanged" FontSize="20" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0, 2"/>
         
-        <ComboBox Grid.Row="0" x:Name="RecordComboBox" SelectionChanged="RecordComboBox_OnSelectionChanged" FontSize="20" Width="200"/>
-        
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" x:Name="EmployeesGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Driver Licence:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Social Security Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="Street Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="7" Grid.Column="0" Content="Postal Code:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="8" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
+
+            <Label Grid.Row="0" Grid.Column="1" x:Name="EmpAst0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="EmpAst1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="2" Grid.Column="1" x:Name="EmpAst2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="3" Grid.Column="1" x:Name="EmpAst3" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            
+            <TextBox x:Name="FirstNameTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="FirstNameTextBox_OnLostFocus"/>
+            <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="LastNameTextBox_OnLostFocus"/>
+            <TextBox x:Name="IRSNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="IRSNumberTextBox_OnLostFocus"/>
+            <TextBox x:Name="DriverLicenceTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="DriverLicenceTextBox_OnLostFocus"/>
+            <TextBox x:Name="SocialSecurityNumberTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="StreetTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="StreetNumberTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="PostalCodeTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="CityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+        </Grid>
+
+
+        <!--<Grid Grid.Row="1" x:Name="EmployeesGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -47,6 +93,7 @@
             <Label Grid.Row="0" Grid.Column="1" x:Name="Ast0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
             <Label Grid.Row="1" Grid.Column="1" x:Name="Ast1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
             <Label Grid.Row="2" Grid.Column="1" x:Name="Ast2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="3" Grid.Column="1" x:Name="Ast3" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
 
             <TextBox x:Name="FirstNameTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
@@ -57,10 +104,97 @@
             <TextBox x:Name="NumberTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="PostalCodeTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-        
         </Grid>
-        <Button Grid.Row="2" Margin="20" Content="Add" FontSize="30" Width="100" Background="White" BorderThickness="2" Click="Add_OnClick"/>
 
+        <Grid Grid.Row="1" x:Name="EmployeesGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Driver Licence:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Social Security Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="7" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="8" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
+
+            <Label Grid.Row="0" Grid.Column="1" x:Name="Ast0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="Ast1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="2" Grid.Column="1" x:Name="Ast2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="3" Grid.Column="1" x:Name="Ast3" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+
+            <TextBox x:Name="FirstNameTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="IRSNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="DriverLicenceTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="SocialSecurityNumberTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="StreetTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="NumberTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="PostalCodeTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="CityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+        </Grid>
+
+        <Grid Grid.Row="1" x:Name="EmployeesGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Driver Licence:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Social Security Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="7" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="8" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
+
+            <Label Grid.Row="0" Grid.Column="1" x:Name="Ast0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="Ast1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="2" Grid.Column="1" x:Name="Ast2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="3" Grid.Column="1" x:Name="Ast3" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+
+            <TextBox x:Name="FirstNameTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="LastNameTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="IRSNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="DriverLicenceTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="SocialSecurityNumberTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="StreetTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="NumberTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="PostalCodeTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="CityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+        </Grid>-->
+
+        <Button Grid.Row="2" Margin="20" Content="Add" FontSize="30" Width="100" Background="White" BorderThickness="2" Click="Add_OnClick"/>
     </Grid>
 </Window>
 
