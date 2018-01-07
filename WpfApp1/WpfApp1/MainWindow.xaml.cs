@@ -25,7 +25,7 @@ namespace WpfApp1
         }
 
         private void TablesComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {         
             App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
             App.DataGrid = DataGrid;
             App.RefreshDataGrid();
@@ -67,17 +67,59 @@ namespace WpfApp1
                         }
                     }
                 }
-                else if (table == "")
+                else if (table == "store")
                 {
-                    
+                    var record = int.Parse(drv["storeid"].ToString());
+                    if (MessageBox.Show("Delete " + table + " with Store ID " + record + "?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        try
+                        {
+                            App.RunCommand("DELETE FROM " + table + " WHERE storeid LIKE '" + record + "';");
+                            MessageBox.Show("Store deleted succesfully!", "Success");
+                            App.LastSelect = "SELECT * FROM store";
+                            App.RefreshDataGrid();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error deleting record", "Error");
+                        }
+                    }
                 }
-                else if (table == "")
+                else if (table == "vehicle")
                 {
-
+                    var record = drv["licenseplate"].ToString();
+                    if (MessageBox.Show("Delete " + table + " with License Plate " + record + "?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        try
+                        {
+                            App.RunCommand("DELETE FROM " + table + " WHERE licenseplate LIKE '" + record + "';");
+                            MessageBox.Show("Vehicle deleted succesfully!", "Success");
+                            App.LastSelect = "SELECT * FROM vehicle";
+                            App.RefreshDataGrid();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error deleting record", "Error");
+                        }
+                    }
                 }
                 else
                 {
-                    
+                    var record = int.Parse(drv["customerid"].ToString());
+                    if (MessageBox.Show("Delete " + table + " with ID " + record + "?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+                    {
+                        try
+                        {
+                            App.RunCommand("DELETE FROM " + table + " WHERE customerid LIKE '" + record + "';");
+                            MessageBox.Show("Customer deleted succesfully!", "Success");
+                            App.LastSelect = "SELECT * FROM customer";
+                            App.RefreshDataGrid();
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Error deleting record", "Error");
+                        }
+                    }
                 }
             }
 
