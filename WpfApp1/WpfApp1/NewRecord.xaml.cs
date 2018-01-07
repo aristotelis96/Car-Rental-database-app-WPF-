@@ -24,6 +24,7 @@ namespace WpfApp1
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
+<<<<<<< HEAD
             if (Check()) return;
 
 
@@ -52,6 +53,26 @@ namespace WpfApp1
                 }
 
             }
+=======
+                
+            App.RunCommand("INSERT INTO employee (IRS_number, firstname, lastname, driverlicense, socialsecuritynumber," +
+                            "street,streetnumber,postalcode,city)" +
+                           "values" +
+                           "(" + int.Parse(IRSNumberTextBox.Text) + ", " +
+                           "'" + FirstNameTextBox.Text + "'," +
+                           "'" + LastNameTextBox.Text + "'," +
+                           "'" + DriverLicenceTextBox.Text + "'," +
+                           "'" + SocialSecurityNumberTextBox.Text + "'," +
+                           "'" + StreetTextBox.Text + "'," +
+                           "'" + NumberTextBox.Text + "'," +
+                           "'" + PostalCodeTextBox.Text + "'," +
+                           "'" + CityTextBox.Text + "');" );
+       
+            App.RunCommand("select * from employee");
+            App.DataGrid.DataContext = App.DataTable;
+            MessageBox.Show("Employee added succesfully!", "Success");
+            Close();
+>>>>>>> a8cb5a234446226bacb41922f8c7574fda726db7
         }
 
         private void RecordComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)

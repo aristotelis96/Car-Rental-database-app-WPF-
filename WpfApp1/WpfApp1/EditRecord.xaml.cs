@@ -23,6 +23,8 @@ namespace WpfApp1
                 EmployeeFirstNameTextBox.Text = _drv["firstname"].ToString();
                 EmployeeLastNameTextBox.Text = _drv["lastname"].ToString();
                 EmployeeIRSNumberTextBox.Text = _drv["irs_number"].ToString();
+                EmployeeDriverLicenceTextBox.Text = _drv["DriverLicense"].ToString();
+                EmployeeSocialSecurityNumberTextBox.Text = _drv["SocialSecurityNumber"].ToString();
                 EmployeeStreetTextBox.Text = _drv["street"].ToString();
                 EmployeeNumberTextBox.Text = _drv["streetnumber"].ToString();
                 EmployeePostalCodeTextBox.Text = _drv["postalcode"].ToString();
@@ -51,6 +53,8 @@ namespace WpfApp1
             App.RunCommand("update employee set streetnumber='" + EmployeeNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
             App.RunCommand("update employee set postalcode='" + EmployeePostalCodeTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
             App.RunCommand("update employee set city='" + EmployeeCityTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
+            App.RunCommand("update employee set socialSecurityNumber='" + EmployeeSocialSecurityNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
+            App.RunCommand("update employee set driverlicense='" + EmployeeDriverLicenceTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
 
             App.RefreshDataGrid();
             MessageBox.Show("Employee updated succesfully!", "Success");
