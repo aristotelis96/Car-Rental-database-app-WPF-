@@ -21,3 +21,4 @@ CREATE VIEW properemployee AS (
 	City as "City",
 	Postalcode as "ZIP"
 	FROM EMPLOYEE);
+	

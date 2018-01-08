@@ -49,14 +49,14 @@ CREATE TABLE Works (
 CREATE TABLE Customer (
 	CustomerID int UNIQUE NOT NULL,
 	FirstRegistration date,
-	SocialSecutiryNumber int,
-	DriverLicense int,
-	IRS_number int,
+	SocialSecutiryNumber  varchar(255),
+	DriverLicense  varchar(255),
+	IRS_number  varchar(255),
 	LastName varchar(255) NOT NULL,
 	FirstName varchar(255) NOT NULL,
 	Street varchar(255), 
-	StreetNumber int,
-	PostalCode int,
+	StreetNumber  varchar(255),
+	PostalCode  varchar(255),
 	City varchar(255),
 	PRIMARY KEY (CustomerID)
 );
@@ -67,7 +67,7 @@ CREATE TABLE Vehicle (
 	Model varchar(255),
 	CarType varchar(255),
 	Make varchar(255),
-	YearMade date,
+	YearMade YEAR,
 	Kilometers int,
 	CylinderCapacity int,
 	HorsePower int,

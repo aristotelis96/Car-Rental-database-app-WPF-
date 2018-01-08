@@ -65,3 +65,4 @@ values
 (1,'pelatis','germanou');
 $$
 	DELIMITER ;
+	
