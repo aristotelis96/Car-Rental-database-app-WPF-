@@ -102,6 +102,16 @@ namespace WpfApp1
             }
         }
 
+        private void Add_OnClick_Phone(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Add_OnClick_Email(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         private void RecordComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (RecordComboBox.SelectedItem.ToString() == "Employee")

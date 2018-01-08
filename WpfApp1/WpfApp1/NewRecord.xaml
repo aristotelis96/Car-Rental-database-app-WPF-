@@ -62,13 +62,17 @@
         </Grid>
 
 
-        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Collapsed">
+        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -82,6 +86,8 @@
             <Label Grid.Row="2" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="3" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="4" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="5" Grid.Column="0" Content="Phones:" FontSize="20" Margin="0, 2" VerticalContentAlignment="Center" />
+            <Label Grid.Row="6" Grid.Column="0" Content="Email:" FontSize="20" Margin="0, 2" VerticalContentAlignment="Center" />
 
             <Label Grid.Row="0" Grid.Column="1" x:Name="StoreAst1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
 
@@ -90,9 +96,13 @@
             <TextBox x:Name="StoreNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StorePostalCodeTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StoreCityTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+
+            <Button Grid.Row="5" Grid.Column= "2" Margin="130, 5" Content="Add phone" FontSize="20" Width="Auto" Background="White" BorderThickness="2" VerticalContentAlignment="Center" Click="Add_OnClick_Phone"/>
+            <Button Grid.Row="6" Grid.Column= "2" Margin="130, 5" Content="Add e-mail" FontSize="20" Width="Auto" Background="White" BorderThickness="2" VerticalContentAlignment="Center" Click="Add_OnClick_Email"/>
+
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Visible">
+        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
