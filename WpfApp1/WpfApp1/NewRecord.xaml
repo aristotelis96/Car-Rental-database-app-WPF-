@@ -61,8 +61,7 @@
             <TextBox x:Name="EmployeeCityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
         </Grid>
 
-
-        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Visible">
+        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -71,8 +70,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-
-
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -80,29 +77,32 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Row="0" Grid.Column="0" Content="Store ID" FontSize="20" Margin="0, 2"/>
-
+            <Label Grid.Row="0" Grid.Column="0" Content="Store ID:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="1" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="2" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
-            <Label Grid.Row="3" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="3" Grid.Column="0" Content="Postal Code:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="4" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
-            <Label Grid.Row="5" Grid.Column="0" Content="Phones:" FontSize="20" Margin="0, 2" VerticalContentAlignment="Center" />
-            <Label Grid.Row="6" Grid.Column="0" Content="Email:" FontSize="20" Margin="0, 2" VerticalContentAlignment="Center" />
+            <Label Grid.Row="5" Grid.Column="0" Content="Phone:" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="6" Grid.Column="0" Content="E-mail:" FontSize="20" Margin="0, 2"/>
 
             <Label Grid.Row="0" Grid.Column="1" x:Name="StoreAst1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
 
-            <TextBox x:Name="StoreidTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDTextBox_OnLostFocus"/>
+            <TextBox x:Name="StoreIDTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDTextBox_OnLostFocus"/>
             <TextBox x:Name="StoreStreetTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StoreNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StorePostalCodeTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StoreCityTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-
-            <Button Grid.Row="5" Grid.Column= "2" Margin="130, 5" Content="Add phone" FontSize="20" Width="Auto" Background="White" BorderThickness="2" VerticalContentAlignment="Center" Click="Add_OnClick_Phone"/>
-            <Button Grid.Row="6" Grid.Column= "2" Margin="130, 5" Content="Add e-mail" FontSize="20" Width="Auto" Background="White" BorderThickness="2" VerticalContentAlignment="Center" Click="Add_OnClick_Email"/>
-
+            <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 2">
+                <Button Content="View Phones" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="ViewPhones_OnClick" Margin="2, 0"/>
+                <Button Content="Add Phone" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="AddPhone_OnClick" Margin="2, 0"/>
+            </StackPanel>
+            <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 2">
+                <Button Content="View E-mails" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="ViewEmails_OnClick" Margin="2, 0"/>
+                <Button Content="Add E-mail" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="AddEmail_OnClick" Margin="2, 0"/>
+            </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Collapsed">
+        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -129,7 +129,7 @@
             <Label Grid.Row="1" Grid.Column="0" Content="Model:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="2" Grid.Column="0" Content="Car Type:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="3" Grid.Column="0" Content="Make:" FontSize="20" Margin="0, 2"/>
-            <Label Grid.Row="4" Grid.Column="0" Content="Year Made (YYYY-MM-DD):" FontSize="20" Margin="0, 2"/>
+            <Label Grid.Row="4" Grid.Column="0" Content="Year Made:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="5" Grid.Column="0" Content="Kilometers:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="6" Grid.Column="0" Content="Cylinder Capacity:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="7" Grid.Column="0" Content="Horse Power:" FontSize="20" Margin="0, 2"/>
@@ -147,7 +147,12 @@
             <TextBox x:Name="ModelTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CarTypeTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="MakeTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-            <TextBox x:Name="YearMadeTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <Grid Grid.Row="4" Grid.Column="2" Margin="0, 2" >
+                <ComboBox x:Name="YearMadeComboBox" FontSize="20" Width="350" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Button x:Name="YearMadeCancelButton" Content="X" FontSize="20" Width="20" Height="33" Background="White" Foreground="Red" Click="YearMadeCancelButton_OnClick" HorizontalAlignment="Right"/>
+            </Grid>
+
+
             <TextBox x:Name="KilometersTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CylinderCapacityTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="HorsePowerTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
@@ -157,8 +162,6 @@
             <TextBox x:Name="LastServiceTextBox" Grid.Row="11" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="InsuranceExpirationDateTextBox" Grid.Row="12" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StoreIDVehicleTextBox" Grid.Row="13" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDVehicleTextBox_OnLostFocus"/>
-
-
         </Grid>
 
         <!--Grid Grid.Row="1" x:Name="CustomerGrid" Visibility="Collapsed">

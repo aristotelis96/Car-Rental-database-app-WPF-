@@ -21,7 +21,7 @@
             <Label Width="1" Background="Black"/>
             <Button Content="Edit" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Edit_OnClick"/>
             <Label Width="1" Background="Black"/>
-            <Button Content="Delete" BorderThickness="0" FontSize="20" Background="White" Width="102" Click="Delete_OnClick"/>
+            <Button Content="Delete" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Delete_OnClick"/>
             <Label Width="1" Background="Black"/>
             
         </StackPanel>
