@@ -96,7 +96,7 @@ namespace WpfApp1
             }
             else if (RecordComboBox.SelectedItem.ToString() == "Vehicle")
             {
-                App.RunCommand("select * from vehicle where licenseplate =" + int.Parse(LicensePlateTextBox.Text));
+                App.RunCommand("select * from vehicle where licenseplate ='" + (LicensePlateTextBox.Text) + "';");
                 if (App.DataTable.Rows.Count != 0)
                 {
                     MessageBox.Show("Vehicle with Licence Plate " + LicensePlateTextBox.Text + " already exists!", "Error");
@@ -106,25 +106,38 @@ namespace WpfApp1
 
                 try
                 {
-                    DateTime? yearmade;
+                    string yearmade, Nservice, Lservice, Insurance;
                     if (YearMadeComboBox.SelectedIndex != -1)
-                        yearmade = new DateTime(int.Parse(YearMadeComboBox.SelectedItem.ToString()), 1, 1);
+                        yearmade = "'" + YearMadeComboBox.SelectedItem.ToString() + "'";
                     else
-                        yearmade = null;
+                        yearmade = "null";
 
-                    App.RunCommand("insert into vehicle(licenseplate, model, cartype, make, yearmade, damages, malfunctions, storeid)" +
+                    if (string.IsNullOrWhiteSpace(NextServiceTextBox.Text))
+                        Nservice = "null";
+                    else
+                        Nservice = "'" + NextServiceTextBox.Text + "'";
+                    if (string.IsNullOrWhiteSpace(LastServiceTextBox.Text))
+                        Lservice = "null";
+                    else
+                        Lservice = "'" + LastServiceTextBox.Text + "'";
+                    if (string.IsNullOrWhiteSpace(InsuranceExpirationDateTextBox.Text))
+                        Insurance = "null";
+                    else
+                        Insurance = "'" + InsuranceExpirationDateTextBox.Text + "'";
+
+                    App.RunCommand("insert into vehicle(licenseplate, model, cartype, make, yearmade, damages, malfunctions, nextservice,lastservice, InsuranceExpirationDate ,storeid)" +
                                    "values" +
                                    "('" + LicensePlateTextBox.Text + "'," +
                                    "'" + ModelTextBox.Text + "'," +
                                    "'" + CarTypeTextBox.Text + "'," +
                                    "'" + MakeTextBox.Text + "'," +
-                                   "'" + yearmade?.ToString("yyyy-MM-dd")  + "'," +
+                                   "" + yearmade + "," +
                                    "'" + DamagesTextBox.Text + "'," +
                                    "'" + MalfunctionsTextBox.Text + "'," +
-                                  // "'" + NextServiceTextBox.Text + "'," +
-                                  // "'" + LastServiceTextBox.Text + "'," +
-                                  // "'" + InsuranceExpirationDateTextBox.Text + "'," +*/
-                                       + int.Parse(StoreIDVehicleTextBox.Text) + ");");
+                                   "" + Nservice + "," +
+                                   "" + Lservice + "," +
+                                   "" + Insurance + "," +
+                                   "" + int.Parse(StoreIDVehicleTextBox.Text) + ");");
                     App.RefreshDataGrid();
                     MessageBox.Show("Vehicle added succesfully!", "Success");
                     Close();
@@ -133,7 +146,46 @@ namespace WpfApp1
                 {
                     MessageBox.Show("Something went wrong!", "Error");
                 }
+            }
+            else if (RecordComboBox.SelectedItem.ToString() == "Customer")
+            {
+                App.RunCommand("select * from customer where customerid=" + int.Parse(CustomerIDTextBox.Text));
+                if (App.DataTable.Rows.Count != 0)
+                {
+                    MessageBox.Show("Customer with Customer ID " + CustomerIDTextBox.Text + " already exists!", "Error");
+                    CustomerIDTextBox.Text = "";
+                    return;
+                }
 
+                try
+                {
+                    string registration;
+                    if (string.IsNullOrWhiteSpace(FirstRegistrationTextBox.Text))
+                        registration = "null";
+                    else
+                        registration = "'" + FirstRegistrationTextBox.Text + "'";
+
+                    App.RunCommand("insert into customer(Customerid, FirstRegistration, SocialSecutiryNumber, DriverLicense, Irs_number, firstname, lastname, street, streetnumber, postalcode, city)" +
+                                   "values" +
+                                   "(" + int.Parse(CustomerIDTextBox.Text) + "," +
+                                   "" + registration + "," +
+                                   "'" + CustomerSocialSecurityNumberTextBox.Text + "'," +
+                                   "'" + CustomerDriverLicenceTextBox.Text + "'," +
+                                   "'" + CustomerIRSNumberTextBox.Text + "'," +
+                                   "'" + CustomerFirstNameTextBox.Text + "'," +
+                                   "'" + CustomerLastNameTextBox.Text + "'," +
+                                   "'" + CustomerStreetTextBox.Text + "'," +
+                                   "'" + CustomerNumberTextBox.Text + "'," +
+                                   "'" + CustomerPostalCodeTextBox.Text + "'," +
+                                   "'" + CustomerCityTextBox.Text + "');");
+                    App.RefreshDataGrid();
+                    MessageBox.Show("Customer added succesfully!", "Success");
+                    Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Something went wrong!", "Error");
+                }
             }
         }
 
@@ -145,7 +197,7 @@ namespace WpfApp1
                 EmployeesGrid.Visibility = Visibility.Visible;
                 StoreGrid.Visibility = Visibility.Collapsed;
                 VehicleGrid.Visibility = Visibility.Collapsed;
-                //CustomerGrid.Visibility = Visibility.Collapsed;
+                CustomerGrid.Visibility = Visibility.Collapsed;
             }
             else if (RecordComboBox.SelectedItem.ToString() == "Store")
             {
@@ -153,7 +205,7 @@ namespace WpfApp1
                 EmployeesGrid.Visibility = Visibility.Collapsed;
                 StoreGrid.Visibility = Visibility.Visible;
                 VehicleGrid.Visibility = Visibility.Collapsed;
-                //CustomerGrid.Visibility = Visibility.Collapsed;
+                CustomerGrid.Visibility = Visibility.Collapsed;
             }
             else if (RecordComboBox.SelectedItem.ToString() == "Vehicle")
             {
@@ -161,15 +213,15 @@ namespace WpfApp1
                 EmployeesGrid.Visibility = Visibility.Collapsed;
                 StoreGrid.Visibility = Visibility.Collapsed;
                 VehicleGrid.Visibility = Visibility.Visible;
-                //CustomerGrid.Visibility = Visibility.Visible;
+                CustomerGrid.Visibility = Visibility.Collapsed;
             }
             else
             {
-                Height = 850;
+                Height = 650;
                 EmployeesGrid.Visibility = Visibility.Collapsed;
                 StoreGrid.Visibility = Visibility.Collapsed;
                 VehicleGrid.Visibility = Visibility.Collapsed;
-                //CustomerGrid.Visibility = Visibility.Visible;
+                CustomerGrid.Visibility = Visibility.Visible;
             }
         }
 
@@ -253,6 +305,37 @@ namespace WpfApp1
                 EmpAst3.Visibility = Visibility.Collapsed;
         }
 
+        private void CustomerIDTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerIDTextBox.Text == "")
+                CustAst0.Visibility = Visibility.Visible;
+            else
+            {
+                if (!int.TryParse(CustomerIDTextBox.Text, out var n))
+                {
+                    MessageBox.Show("Customer ID should be a numeric value.", "Error");
+                    CustomerIDTextBox.Text = "";
+                    return;
+                }
+                CustAst0.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void CustomerFirstNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerFirstNameTextBox.Text == "")
+                CustAst1.Visibility = Visibility.Visible;
+            else
+                CustAst1.Visibility = Visibility.Collapsed;
+        }
+        private void CustomerLastNameTextBox_OnLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (CustomerFirstNameTextBox.Text == "")
+                CustAst2.Visibility = Visibility.Visible;
+            else
+                CustAst2.Visibility = Visibility.Collapsed;
+        }
+
         public bool Check()
         {
             if (RecordComboBox.SelectedItem.ToString() == "Employee")
@@ -274,18 +357,16 @@ namespace WpfApp1
             {
                 StoreIDVehicleTextBox_OnLostFocus(null, null);
                
-                /* if (YearMadeTextBox.Text == "")
-                     YearMadeTextBox = null;
-                 else
-                     YearMadeTextBox.Text = "'" + YearMadeTextBox.Text + "'";
-                 if (NextServiceTextBox.Text == "")
-                     NextServiceTextBox = null;
-                 if (LastServiceTextBox.Text == "")
-                     LastServiceTextBox = null;
-                 if (InsuranceExpirationDateTextBox.Text == "")
-                     InsuranceExpirationDateTextBox = null;*/
                 return !(VehicleAst0.Visibility == Visibility.Collapsed &&
                         VehicleAst1.Visibility == Visibility.Collapsed);
+            }
+
+            if (RecordComboBox.SelectedItem.ToString() == "Customer")
+            {
+                CustomerIDTextBox_OnLostFocus(null, null);
+
+                return !(CustAst1.Visibility == Visibility.Collapsed &&
+                       CustAst2.Visibility == Visibility.Collapsed);
             }
 
             return !(EmpAst0.Visibility == Visibility.Collapsed &&

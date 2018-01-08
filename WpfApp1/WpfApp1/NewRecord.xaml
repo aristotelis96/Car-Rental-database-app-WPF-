@@ -61,10 +61,6 @@
             <TextBox x:Name="EmployeeCityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
         </Grid>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6971164ad0591b0974fa41763ff551bb5ba4797a
         <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -106,7 +102,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Visible">
+        <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -168,7 +164,7 @@
             <TextBox x:Name="StoreIDVehicleTextBox" Grid.Row="13" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDVehicleTextBox_OnLostFocus"/>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="CustomerGrid" Visibility="Collapsed">
+        <Grid Grid.Row="1" x:Name="CustomerGrid" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -200,18 +196,18 @@
             <Label Grid.Row="9" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="10" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
 
-            <Label Grid.Row="0" Grid.Column="1" x:Name="Ast0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
-            <Label Grid.Row="1" Grid.Column="1" x:Name="Ast1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
-            <Label Grid.Row="2" Grid.Column="1" x:Name="Ast2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
-            <Label Grid.Row="3" Grid.Column="1" x:Name="Ast3" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red" Visibility="Collapsed"/>
+            <Label Grid.Row="0" Grid.Column="1" x:Name="CustAst0" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
+            <Label Grid.Row="5" Grid.Column="1" x:Name="CustAst1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
+            <Label Grid.Row="6" Grid.Column="1" x:Name="CustAst2" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
 
-            <TextBox x:Name="CustomerIDTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+
+            <TextBox x:Name="CustomerIDTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="CustomerIDTextBox_OnLostFocus"/>
             <TextBox x:Name="FirstRegistrationTextBox" Grid.Row="1" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CustomerSocialSecurityNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CustomerDriverLicenceTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CustomerIRSNumberTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-            <TextBox x:Name="CustomerFirstNameTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-            <TextBox x:Name="CustomerLastNameTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2"/>
+            <TextBox x:Name="CustomerFirstNameTextBox" Grid.Row="5" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="CustomerFirstNameTextBox_OnLostFocus"/>
+            <TextBox x:Name="CustomerLastNameTextBox" Grid.Row="6" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="CustomerLastNameTextBox_OnLostFocus"/>
             <TextBox x:Name="CustomerStreetTextBox" Grid.Row="7" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CustomerNumberTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="CustomerPostalCodeTextBox" Grid.Row="9" Grid.Column="2" FontSize="20" Margin="0, 2"/>
