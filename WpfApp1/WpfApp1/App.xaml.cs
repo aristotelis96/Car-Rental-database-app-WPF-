@@ -37,7 +37,8 @@ namespace WpfApp1
             }
             catch
             {
-                MessageBox.Show("No κονεξο μπιτς");
+                MessageBox.Show("Something went wrong (Wrong key maybe?)!");
+                throw;
             }
         }
 

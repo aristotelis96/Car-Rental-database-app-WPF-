@@ -22,7 +22,7 @@ namespace WpfApp1
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            new AddPhone(int.Parse(_drv["storeid"].ToString())).Show();
+            new AddWork(int.Parse(_drv["storeid"].ToString())).Show();
         }
 
 
@@ -33,11 +33,12 @@ namespace WpfApp1
             {
                 var test = (DataRowView)DataGrid.SelectedItem;
                 var record = int.Parse(test["IRS_Number"].ToString());
+                var date = DateTime.Parse(test["startDate"].ToString());
                 if (MessageBox.Show("Delete Employee with IRS number: " + record + "?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
                 {
                     try
                     {
-                        App.RunCommand("DELETE FROM Works WHERE irs_number LIKE '" + record + "';");
+                        App.RunCommand("DELETE FROM Works WHERE irs_number LIKE '" + record + "' && startdate LIKE '" + date.ToString("yyyy-MM-dd") + "';");
                         MessageBox.Show("Employee deleted succesfully!", "Success");
                         App.LastSelect = "SELECT * FROM works where storeid=" + _drv["storeid"].ToString() + ";";
                         App.RefreshDataGrid();
