@@ -25,7 +25,7 @@ CREATE TABLE Store (
 
 CREATE TABLE PhoneNumber (
 	StoreID int,
-	Num int,
+	Num long,
 	FOREIGN KEY (StoreID) REFERENCES Store(StoreID) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -38,7 +38,7 @@ CREATE TABLE Email (
 CREATE TABLE Works (
 	StartDate date NOT NULL,
 	FinishDate date,
-	Position varchar(255) NOT NULL,
+	Position varchar(255),
 	IRS_number int,
 	StoreID int,
 	FOREIGN KEY (IRS_number) REFERENCES Employee(IRS_number) ON UPDATE CASCADE ON DELETE CASCADE,
