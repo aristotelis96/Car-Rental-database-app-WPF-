@@ -25,7 +25,12 @@ namespace WpfApp1
         }
 
         private void TablesComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {         
+        {   
+            if (TablesComboBox.SelectedItem.ToString() == "Store")
+                ViewPhones.Visibility = Visibility.Visible;
+            else
+                ViewPhones.Visibility = Visibility.Collapsed;
+
             App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
             App.DataGrid = DataGrid;
             App.RefreshDataGrid();
@@ -124,5 +129,12 @@ namespace WpfApp1
             }
 
         }
+
+        private void ViewPhones_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (DataGrid.SelectedItem != null)
+                new PhonesWindow((DataRowView)DataGrid.SelectedItem).Show();
+        }
     }
+
 }

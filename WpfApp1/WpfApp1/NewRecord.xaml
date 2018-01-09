@@ -61,7 +61,7 @@
             <TextBox x:Name="EmployeeCityTextBox" Grid.Row="8" Grid.Column="2" FontSize="20" Margin="0, 2"/>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Collapsed">
+        <Grid Grid.Row="1" x:Name="StoreGrid" Visibility="Visible">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -82,9 +82,7 @@
             <Label Grid.Row="2" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="3" Grid.Column="0" Content="Postal Code:" FontSize="20" Margin="0, 2"/>
             <Label Grid.Row="4" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
-            <Label Grid.Row="5" Grid.Column="0" Content="Phone:" FontSize="20" Margin="0, 2"/>
-            <Label Grid.Row="6" Grid.Column="0" Content="E-mail:" FontSize="20" Margin="0, 2"/>
-
+            
             <Label Grid.Row="0" Grid.Column="1" x:Name="StoreAst1" Content="*" FontSize="20" HorizontalContentAlignment="Right" Foreground="Red"/>
 
             <TextBox x:Name="StoreIDTextBox" Grid.Row="0" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDTextBox_OnLostFocus"/>
@@ -92,14 +90,7 @@
             <TextBox x:Name="StoreNumberTextBox" Grid.Row="2" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StorePostalCodeTextBox" Grid.Row="3" Grid.Column="2" FontSize="20" Margin="0, 2"/>
             <TextBox x:Name="StoreCityTextBox" Grid.Row="4" Grid.Column="2" FontSize="20" Margin="0, 2"/>
-            <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 2">
-                <Button Content="View Phones" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="ViewPhones_OnClick" Margin="2, 0"/>
-                <Button Content="Add Phone" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="AddPhone_OnClick" Margin="2, 0"/>
-            </StackPanel>
-            <StackPanel Grid.Row="6" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0, 2">
-                <Button Content="View E-mails" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="ViewEmails_OnClick" Margin="2, 0"/>
-                <Button Content="Add E-mail" FontSize="20" Width="150" Background="White" BorderThickness="2" Click="AddEmail_OnClick" Margin="2, 0"/>
-            </StackPanel>
+     
         </Grid>
 
         <Grid Grid.Row="1" x:Name="VehicleGrid" Visibility="Collapsed">
@@ -164,7 +155,7 @@
             <TextBox x:Name="StoreIDVehicleTextBox" Grid.Row="13" Grid.Column="2" FontSize="20" Margin="0, 2" LostFocus="StoreIDVehicleTextBox_OnLostFocus"/>
         </Grid>
 
-        <Grid Grid.Row="1" x:Name="CustomerGrid" Visibility="Visible">
+        <Grid Grid.Row="1" x:Name="CustomerGrid" Visibility="Collapsed">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>

@@ -374,23 +374,9 @@ namespace WpfApp1
                    EmpAst2.Visibility == Visibility.Collapsed &&
                    EmpAst3.Visibility == Visibility.Collapsed);
         }
+        
 
-        private void ViewPhones_OnClick(object sender, RoutedEventArgs e)
-        {
-        }
 
-        private void AddPhone_OnClick(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void ViewEmails_OnClick(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void AddEmail_OnClick(object sender, RoutedEventArgs e)
-        {
-
-        }
     
         
 
