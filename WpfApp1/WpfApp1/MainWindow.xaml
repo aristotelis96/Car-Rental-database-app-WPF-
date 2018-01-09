@@ -23,10 +23,16 @@
             <Label Width="1" Background="Black"/>
             <Button Content="Delete" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Delete_OnClick"/>
             <Label Width="1" Background="Black"/>
-
-        </StackPanel>
-        <Button Grid.Row="0" x:Name="ViewPhones" Content="View Phones" BorderThickness="0" FontSize="15" Background="White" Width="100" Click="ViewPhones_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        </StackPanel >
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="40" HorizontalAlignment="Right">
+            <Button Grid.Row="0" x:Name="ViewPhones" Content="View Phones" BorderThickness="0" FontSize="15" Background="White" Width="100" Click="ViewPhones_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
         <Label Width="1" Background="Black"/>
+        <Button Grid.Row="0" x:Name="ViewEmails" Content="View E-mails" BorderThickness="0" FontSize="15" Background="White" Width="100" Click="ViewPhones_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <Label Width="1" Background="Black"/>
+        <Button Grid.Row="0" x:Name="ViewEmployees" Content="View Employees" BorderThickness="0" FontSize="15" Background="White" Width="120" Click="ViewEmployees_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+        <Label Width="1" Background="Black"/>
+        </StackPanel>
 
         <DataGrid Grid.Row="1" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True">
             <DataGrid.CellStyle>

@@ -25,11 +25,19 @@ namespace WpfApp1
         }
 
         private void TablesComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        {   
+        {
             if (TablesComboBox.SelectedItem.ToString() == "Store")
+            {
                 ViewPhones.Visibility = Visibility.Visible;
+                ViewEmails.Visibility = Visibility.Visible;
+                ViewEmployees.Visibility = Visibility.Visible;
+            }
             else
+            {
                 ViewPhones.Visibility = Visibility.Collapsed;
+                ViewEmails.Visibility = Visibility.Collapsed;
+                ViewEmployees.Visibility = Visibility.Collapsed;
+            }
 
             App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
             App.DataGrid = DataGrid;
@@ -135,6 +143,11 @@ namespace WpfApp1
             if (DataGrid.SelectedItem != null)
                 new PhonesWindow((DataRowView)DataGrid.SelectedItem).Show();
         }
+        private void ViewEmployees_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (DataGrid.SelectedItem != null)
+                new Works((DataRowView)DataGrid.SelectedItem).Show();
+        }      
     }
 
 }

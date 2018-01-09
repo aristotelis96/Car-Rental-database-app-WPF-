@@ -125,6 +125,13 @@ namespace WpfApp1
                     else
                         Insurance = "'" + InsuranceExpirationDateTextBox.Text + "'";
 
+                    App.RunCommand("select * from store where storeid=" + int.Parse(StoreIDVehicleTextBox.Text) + ";");
+                    if (App.DataTable.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Store with Store ID " + StoreIDVehicleTextBox.Text + " does not exist!", "Error");
+                        CustomerIDTextBox.Text = "";
+                        return;
+                    }
                     App.RunCommand("insert into vehicle(licenseplate, model, cartype, make, yearmade, damages, malfunctions, nextservice,lastservice, InsuranceExpirationDate ,storeid)" +
                                    "values" +
                                    "('" + LicensePlateTextBox.Text + "'," +
