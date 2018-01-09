@@ -22,7 +22,7 @@ namespace WpfApp1
 
         private void Add_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            new AddPhone(int.Parse(_drv["storeid"].ToString())).Show();
         }
 
 
@@ -38,7 +38,7 @@ namespace WpfApp1
                     try
                     {
                         App.RunCommand("DELETE FROM phonenumber WHERE num LIKE '" + record + "';");
-                        MessageBox.Show("Employee deleted succesfully!", "Success");
+                        MessageBox.Show("Number deleted succesfully!", "Success");
                         App.LastSelect = "SELECT num as 'Numbers:' FROM phonenumber where storeid=" + _drv["storeid"].ToString() + ";";
                         App.RefreshDataGrid();
                     }
