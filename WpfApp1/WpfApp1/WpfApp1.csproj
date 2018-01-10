@@ -66,7 +66,35 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddWork.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="EditRecord.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AddPhone.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HorsePower.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Numberofcars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WorksAndDate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Works.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Phones.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -78,12 +106,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddWork.xaml.cs">
+      <DependentUpon>AddWork.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EditRecord.xaml.cs">
       <DependentUpon>EditRecord.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddPhone.xaml.cs">
+      <DependentUpon>AddPhone.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HorsePower.xaml.cs">
+      <DependentUpon>HorsePower.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Numberofcars.xaml.cs">
+      <DependentUpon>Numberofcars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorksAndDate.xaml.cs">
+      <DependentUpon>WorksAndDate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Works.xaml.cs">
+      <DependentUpon>Works.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Phones.xaml.cs">
+      <DependentUpon>Phones.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewRecord.xaml.cs">
       <DependentUpon>NewRecord.xaml</DependentUpon>

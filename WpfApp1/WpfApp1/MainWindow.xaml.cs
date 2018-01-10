@@ -31,12 +31,22 @@ namespace WpfApp1
                 ViewPhones.Visibility = Visibility.Visible;
                 ViewEmails.Visibility = Visibility.Visible;
                 ViewEmployees.Visibility = Visibility.Visible;
+                Numberofcars.Visibility = Visibility.Visible;
             }
             else
             {
                 ViewPhones.Visibility = Visibility.Collapsed;
                 ViewEmails.Visibility = Visibility.Collapsed;
                 ViewEmployees.Visibility = Visibility.Collapsed;
+                Numberofcars.Visibility = Visibility.Collapsed;
+            }
+            if (TablesComboBox.SelectedItem.ToString() == "Vehicle")
+            {
+                Horsepower.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Horsepower.Visibility = Visibility.Collapsed;
             }
 
             App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
@@ -143,11 +153,20 @@ namespace WpfApp1
             if (DataGrid.SelectedItem != null)
                 new PhonesWindow((DataRowView)DataGrid.SelectedItem).Show();
         }
+        private void Numberofcars_OnClick(object sender, RoutedEventArgs e)
+        {
+            new NumberOfCars().Show();
+        }
+
         private void ViewEmployees_OnClick(object sender, RoutedEventArgs e)
         {
             if (DataGrid.SelectedItem != null)
                 new Works((DataRowView)DataGrid.SelectedItem).Show();
-        }      
+        }
+        private void HorsePower_OnClick(object sender, RoutedEventArgs e)
+        {
+            new HorsePower().Show();
+        }
     }
 
 }

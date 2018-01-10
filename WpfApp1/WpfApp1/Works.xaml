@@ -13,7 +13,6 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <StackPanel Grid.Row="0" Orientation="Horizontal" Height="40">
             <Button  Content="Add" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Add_OnClick"/>
             <Label Width="1" Background="Black"/>

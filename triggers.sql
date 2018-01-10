@@ -37,7 +37,7 @@ DROP TRIGGER IF EXISTS creat_employee;
  CREATE TRIGGER creat_employee BEFORE INSERT ON employee
 	FOR EACH ROW
 	BEGIN
-		IF (NEW.street='') THEN
+		IF (NEW.street='' OR new.street=null) THEN
 			SET NEW.street='Unknown';
 		ELSE
 			SET NEW.street = NEW.street;

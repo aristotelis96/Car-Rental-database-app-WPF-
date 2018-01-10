@@ -132,13 +132,20 @@ namespace WpfApp1
                         CustomerIDTextBox.Text = "";
                         return;
                     }
-                    App.RunCommand("insert into vehicle(licenseplate, model, cartype, make, yearmade, damages, malfunctions, nextservice,lastservice, InsuranceExpirationDate ,storeid)" +
+                    int KM,CC,HP;
+                    if (!int.TryParse(KilometersTextBox.Text, out KM)) KM = 0;
+                    if (!int.TryParse(CylinderCapacityTextBox.Text, out CC)) CC = 0;
+                    if (!int.TryParse(HorsePowerTextBox.Text, out HP)) HP = 0;
+                    App.RunCommand("insert into vehicle(licenseplate, model, cartype, make, yearmade, kilometers, cylindercapacity,horsepower, damages, malfunctions, nextservice,lastservice, InsuranceExpirationDate ,storeid)" +
                                    "values" +
                                    "('" + LicensePlateTextBox.Text + "'," +
                                    "'" + ModelTextBox.Text + "'," +
                                    "'" + CarTypeTextBox.Text + "'," +
                                    "'" + MakeTextBox.Text + "'," +
                                    "" + yearmade + "," +
+                                   "" + KM + "," +
+                                   "" + CC + "," +
+                                   "" + HP + "," +
                                    "'" + DamagesTextBox.Text + "'," +
                                    "'" + MalfunctionsTextBox.Text + "'," +
                                    "" + Nservice + "," +

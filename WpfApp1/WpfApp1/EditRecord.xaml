@@ -33,7 +33,7 @@
 
                 <Label Grid.Row="0" Grid.Column="0" Content="First Name:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="Last Name:" FontSize="20" Margin="0, 2"/>
-                <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2" IsEnabled="False"/>
+                <Label Grid.Row="2" Grid.Column="0" Content="IRS Number:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="3" Grid.Column="0" Content="Driver Licence:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="4" Grid.Column="0" Content="Social Security Number:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="5" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
@@ -43,7 +43,7 @@
 
                 <TextBox x:Name="EmployeeFirstNameTextBox" Grid.Row="0" Grid.Column="1" FontSize="20" Margin="0, 2"/>
                 <TextBox x:Name="EmployeeLastNameTextBox" Grid.Row="1" Grid.Column="1" FontSize="20" Margin="0, 2"/>
-                <TextBox x:Name="EmployeeIRSNumberTextBox" Grid.Row="2" Grid.Column="1" FontSize="20" Margin="0, 2" IsEnabled="False"/>
+                <TextBox x:Name="EmployeeIRSNumberTextBox" Grid.Row="2" Grid.Column="1" FontSize="20" Margin="0, 2" LostFocus="EmployeeIRSNumberTextBox_LostFocus"/>
                 <TextBox x:Name="EmployeeDriverLicenceTextBox" Grid.Row="3" Grid.Column="1" FontSize="20" Margin="0, 2"/>
                 <TextBox x:Name="EmployeeSocialSecurityNumberTextBox" Grid.Row="4" Grid.Column="1" FontSize="20" Margin="0, 2"/>
                 <TextBox x:Name="EmployeeStreetTextBox" Grid.Row="5" Grid.Column="1" FontSize="20" Margin="0, 2"/>
@@ -78,13 +78,13 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Store ID:" FontSize="20" Margin="0, 2" IsEnabled="False"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Store ID:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="1" Grid.Column="0" Content="Street:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="2" Grid.Column="0" Content="Number:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="3" Grid.Column="0" Content="PostalCode:" FontSize="20" Margin="0, 2"/>
                 <Label Grid.Row="4" Grid.Column="0" Content="City:" FontSize="20" Margin="0, 2"/>
 
-                <TextBox x:Name="StoreIDTextBox" Grid.Row="0" Grid.Column="1" FontSize="20" Margin="0, 2" IsEnabled="False"/>
+                <TextBox x:Name="StoreIDTextBox" Grid.Row="0" Grid.Column="1" FontSize="20" Margin="0, 2" LostFocus="StoreIDTextBox_LostFocus"/>
                 <TextBox x:Name="StoreStreetTextBox" Grid.Row="1" Grid.Column="1" FontSize="20" Margin="0, 2"/>
                 <TextBox x:Name="StoreStreetNumberTextBox" Grid.Row="2" Grid.Column="1" FontSize="20" Margin="0, 2"/>
                 <TextBox x:Name="StorePostalCodeTextBox" Grid.Row="3" Grid.Column="1" FontSize="20" Margin="0, 2"/>

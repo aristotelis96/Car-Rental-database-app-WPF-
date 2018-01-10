@@ -1,63 +1,61 @@
  DELIMITER $$
 -- EMPLOYESS
-insert into employee (irs_number, lastname,firstname)
+insert into employee (irs_number, firstname,lastname, Street, StreetNumber, PostalCode, City)
 values
-(1,"stavrou","john");
+(1,"John","Stavrou", 'Karlovasi', '1', '83200', 'Samos'),
+(2,'Aris','Von','','','',''),
+(3,"Alex","Kourtis",'','','',''),
+(4,'Harry','Potter','','','',''),
+(5,'Ron','Weasley','','','',''),
+(6,'Hermione','Granger','','','',''),
+(7,'Albus','Dumbledore','','','',''),
+(8,'Nevil','Longbottom','','','',''),
+(9,'Tom','Riddle','','','',''),
+(10,'Draco','Malfoy','','','',''),
+(11,'Fred','Weasley','','','',''),
+(12,'James','Potter','','','',''),
+(13,'Lily','Potter','','','','');
 
-insert into employee (irs_number, lastname,firstname)
-values
-(3,"von","geo");
 
-
-insert into employee (irs_number,firstname,lastname)
-values
-(2,'aris','von');
-
-insert into employee (irs_number,firstname,lastname)
-values
-(4,'pan','athan');
 -- STORES --
-insert into store (storeid,street,city)
+insert into store (storeid,street,streetnumber,postalcode,city)
 values
-(01,"germanos",'karlovasi');
+(1,'Airport','','','Athens'),
+(2,'Port','','','Piraeus'),
+(3,'Stadiou','112','11630', 'Athina'),
+(4,'Mesaio','4','83200','Karlovasi');
 
-insert into store(storeid,street,city)
+-- PHONES --
+insert into phonenumber(storeid,num)
 values
-(2,'central','karlovasi');
-
-insert into store(storeid,street,city)
-values
-(3,'ton kosmo', 'patra');
+(1,2107231412),
+(1,24511354),
+(1,24512354),
+(1,24513354),
+(1,24513454),
+(2,56546545);
 
 -- WORKS --
 insert into works(storeid, irs_number,startdate,position)
 values
-(1, 1, '2010-01-01','dieuthintis');
-
-insert into works(storeid, irs_number,startdate,position)
-values
-(2,2,'2010-01-01','servitoraios');
-
-insert into works(storeid, irs_number,startdate,position)
-values
-(1,3,'2010-01-01','pwlitis');
-
-insert into works(storeid, irs_number,startdate,position)
-values
+(1, 1, '2010-01-01','dieuthintis'),
+(2,2,'2010-01-01','servitoraios'),
+(1,3,'2010-01-01','pwlitis'),
 (3,3,'2015-01-01','foititis');
 
+
 -- vehicle --
-insert into vehicle(LicensePlate,Model,Make,Storeid)
+insert into vehicle(LicensePlate,Model,Make,Storeid, kilometers, horsepower)
 values
-('MOA0000','Fiesta','Ford',1);
+('MOA0001','Aygo','Toyota',2,40000,100),
+('MOA0002','T5','Audi',3,20000,210),
+('MOA0003','i3','Hyundai',2,120000,90),
+('MOA0004','i3','Hyundai',2,110000,90),
+('MOA0005','Yaris','Toyota',1,30000,130),
+('MOA0006','Fiesta','Ford',1,50000,110),
+('MOA0007','Fiesta','Ford',1,50000,110),
+('MOV0002','Duster','Ducia',3,90000,150);
 
-insert into vehicle(LicensePlate,Model,Make,Storeid)
-values
-('MOA0001','Fiesta','Ford',1);
-
-insert into vehicle(LicensePlate,Model,Make,Storeid)
-values
-('MOV0002','Duster','Ducia',2);
 
 -- CUSTOMERS --
 insert into customer(customerID, firstname, lastname)

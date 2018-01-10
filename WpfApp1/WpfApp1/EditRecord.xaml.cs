@@ -49,20 +49,28 @@ namespace WpfApp1
             }
            
         }
-
+        
         private void Update_OnClick(object sender, RoutedEventArgs e)
         {
-            if (_drv.DataView.Table.ToString() == "Employee")
+            if (_drv.DataView.Table.ToString() == "employee")
             {
 
-                App.RunCommand("update employee set firstname='" + EmployeeFirstNameTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set lastname='" + EmployeeLastNameTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set street='" + EmployeeStreetTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set streetnumber='" + EmployeeNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set postalcode='" + EmployeePostalCodeTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set city='" + EmployeeCityTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set socialSecurityNumber='" + EmployeeSocialSecurityNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
-                App.RunCommand("update employee set driverlicense='" + EmployeeDriverLicenceTextBox.Text + "' where employee.irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text) + ";");
+                App.RunCommand("select * from employee where irs_number=" + int.Parse(EmployeeIRSNumberTextBox.Text));
+                if (App.DataTable.Rows.Count != 0 && int.Parse(EmployeeIRSNumberTextBox.Text)!= int.Parse(_drv["irs_number"].ToString()))
+                {
+                    MessageBox.Show("Employee with IRS Number " + EmployeeIRSNumberTextBox.Text + " already exists!", "Error");
+                    EmployeeIRSNumberTextBox.Text = "";
+                    return;
+                }
+                App.RunCommand("update employee set firstname='" + EmployeeFirstNameTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set lastname='" + EmployeeLastNameTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set street='" + EmployeeStreetTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set streetnumber='" + EmployeeNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set postalcode='" + EmployeePostalCodeTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set city='" + EmployeeCityTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set socialSecurityNumber='" + EmployeeSocialSecurityNumberTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set driverlicense='" + EmployeeDriverLicenceTextBox.Text + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
+                App.RunCommand("update employee set irs_number='" + int.Parse(EmployeeIRSNumberTextBox.Text) + "' where employee.irs_number=" + int.Parse(_drv["irs_number"].ToString()) + ";");
 
                 App.RefreshDataGrid();
                 MessageBox.Show("Employee updated succesfully!", "Success");
@@ -70,15 +78,42 @@ namespace WpfApp1
             }
             else if (_drv.DataView.Table.ToString() == "store")
             {
-
-                App.RunCommand("update store set street='" + StoreStreetTextBox.Text + "' where store.storeid=" + int.Parse(StoreIDTextBox.Text) + ";");
-                App.RunCommand("update store set streetnumber='" + StoreStreetNumberTextBox.Text + "' where store.storeid=" + int.Parse(StoreIDTextBox.Text) + ";");
-                App.RunCommand("update store set postalcode='" + StorePostalCodeTextBox.Text + "' where store.storeid=" + int.Parse(StoreIDTextBox.Text) + ";");
-                App.RunCommand("update store set city='" + StoreCityTextBox.Text + "' where store.storeid=" + int.Parse(StoreIDTextBox.Text) + ";");
+                App.RunCommand("select * from store where storeid=" + int.Parse(StoreIDTextBox.Text));
+                if (App.DataTable.Rows.Count != 0 && int.Parse(StoreIDTextBox.Text) != int.Parse(_drv["Storeid"].ToString()))
+                {
+                    MessageBox.Show("Store with ID Number " + StoreIDTextBox.Text + " already exists!", "Error");
+                    StoreIDTextBox.Text = "";
+                    return;
+                }
+                App.RunCommand("update store set street='" + StoreStreetTextBox.Text + "' where store.storeid=" + int.Parse(_drv["storeid"].ToString()) + ";");
+                App.RunCommand("update store set streetnumber='" + StoreStreetNumberTextBox.Text + "' where store.storeid=" + int.Parse(_drv["storeid"].ToString()) + ";");
+                App.RunCommand("update store set postalcode='" + StorePostalCodeTextBox.Text + "' where store.storeid=" + int.Parse(_drv["storeid"].ToString()) + ";");
+                App.RunCommand("update store set city='" + StoreCityTextBox.Text + "' where store.storeid=" + int.Parse(_drv["storeid"].ToString()) + ";");
+                App.RunCommand("update store set storeid='" + int.Parse(StoreIDTextBox.Text) + "' where store.storeid=" + int.Parse(_drv["storeid"].ToString()) + ";");
 
                 App.RefreshDataGrid();
                 MessageBox.Show("Store updated succesfully!", "Success");
                 Close();
+            }
+        }
+
+        private void EmployeeIRSNumberTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(EmployeeIRSNumberTextBox.Text, out var n))
+            {
+                MessageBox.Show("IRS Number should be a numeric value.", "Error");
+                EmployeeIRSNumberTextBox.Text = "";
+                return;
+            }
+        }
+
+        private void StoreIDTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (!int.TryParse(StoreIDTextBox.Text, out var n))
+            {
+                MessageBox.Show("Store ID Number should be a numeric value.", "Error");
+                StoreIDTextBox.Text = "";
+                return;
             }
         }
     }
