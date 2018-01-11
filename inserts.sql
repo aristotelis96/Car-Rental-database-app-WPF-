@@ -7,15 +7,15 @@ values
 (2,'Aris','Von','Pratinou','86','11634','Athens'),
 (3,"Alex","Kourtis",'Galatsi','15','11002','Athens'),
 (4,'Harry','Potter','Gryffindor','4','00123','Hogwarts'),
-(5,'Ron','Weasley','','','',''),
-(6,'Hermione','Granger','','','',''),
-(7,'Albus','Dumbledore','','','',''),
-(8,'Nevil','Longbottom','','','',''),
-(9,'Tom','Riddle','','','',''),
-(10,'Draco','Malfoy','','','',''),
-(11,'Fred','Weasley','','','',''),
-(12,'James','Potter','','','',''),
-(13,'Lily','Potter','','','','');
+(5,'Ron','Weasley','Gryffindor','6','00123','Hogwarts'),
+(6,'Hermione','Granger','Gryffindor','5','00123','Hogwarts'),
+(7,'Albus','Dumbledore','BigTower','1','00123','Hogwarts'),
+(8,'Nevil','Longbottom','Gryffindor','7','00123','Hogwarts'),
+(9,'Tom','Riddle','Forbidden','0','12300','Forest'),
+(10,'Draco','Malfoy','Slytherin','10','00123','Hogwarts'),
+(11,'Fred','Weasley','WeasleyHouse','1','123','Weasley'),
+(12,'James','Potter','Godricks','1','72000','Hollow'),
+(13,'Lily','Potter','Godricks','1','72000','Hollow');
 
 
 -- STORES --
@@ -48,7 +48,7 @@ values
 (3,3,'2012-01-01','ProPUBG'),
 (4,4,'2010-01-01','Wizard'),
 (5,1,'2009-01-01','Useless'),
-(4,2,'2012-01-01','DoesAllTheWork'),
+(6,2,'2012-01-01','DoesAllTheWork'),
 (4,3,'2014-01-01','Seeker'),
 (2,1,'2015-01-01','SomeJob');
 
@@ -73,7 +73,7 @@ values
 ('MOV0008','Duster','Ducia',3,90000,150);
 
 -- CUSTOMERS --
-delete from customers;
+delete from customer;
 insert into customer(customerID, firstname, lastname)
 values
 (1,'pelatis','germanou');

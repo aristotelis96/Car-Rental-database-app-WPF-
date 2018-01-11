@@ -28,6 +28,14 @@ namespace WpfApp1
 
         private void TablesComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if (TablesComboBox.SelectedItem.ToString() == "Employee")
+            {
+                City.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                City.Visibility = Visibility.Collapsed;
+            }
             if (TablesComboBox.SelectedItem.ToString() == "Store")
             {
                 ViewPhones.Visibility = Visibility.Visible;
@@ -185,6 +193,11 @@ namespace WpfApp1
                 return;
 
             }
+        }
+
+        private void City_Click(object sender, RoutedEventArgs e)
+        {
+            new Citizens().Show();
         }
     }
 

@@ -87,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Citizens.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Numberofcars.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +129,9 @@
     </Compile>
     <Compile Include="Kilometers.xaml.cs">
       <DependentUpon>Kilometers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Citizens.xaml.cs">
+      <DependentUpon>Citizens.xaml</DependentUpon>
     </Compile>
     <Compile Include="Numberofcars.xaml.cs">
       <DependentUpon>Numberofcars.xaml</DependentUpon>

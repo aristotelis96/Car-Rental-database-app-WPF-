@@ -51,3 +51,5 @@ C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\HorsePow
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\HorsePower.g.cs
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilometers.baml
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilometers.g.cs
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Citizens.baml
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Citizens.g.cs
