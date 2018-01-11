@@ -21,7 +21,7 @@
 
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True">
+        <DataGrid Grid.Row="1" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True" AutoGeneratingColumn="OnAutoGeneratingColumn">
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
                     <Setter Property="BorderThickness" Value="0"/>
