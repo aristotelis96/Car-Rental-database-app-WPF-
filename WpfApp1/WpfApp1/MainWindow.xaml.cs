@@ -84,7 +84,7 @@ namespace WpfApp1
                 var drv = (DataRowView) DataGrid.SelectedItem;
                 var table = drv.DataView.Table.ToString();
 
-                if (table == "employee") // ToDo
+                if (table == "employee")
                 {
                     var record = int.Parse(drv["IRS_NUMBER"].ToString());
                     if (MessageBox.Show("Delete " + table + " with IRS Number " + record + "?", "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
