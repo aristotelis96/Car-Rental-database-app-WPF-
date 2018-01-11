@@ -1,6 +1,8 @@
 ﻿using System.Data;
 using System.Windows;
 using System.Windows.Controls;
+using Microsoft.VisualBasic;
+
 
 namespace WpfApp1
 {
@@ -43,10 +45,12 @@ namespace WpfApp1
             if (TablesComboBox.SelectedItem.ToString() == "Vehicle")
             {
                 Horsepower.Visibility = Visibility.Visible;
+                FindVehicle.Visibility = Visibility.Visible;
             }
             else
             {
                 Horsepower.Visibility = Visibility.Collapsed;
+                FindVehicle.Visibility = Visibility.Collapsed;
             }
 
             App.LastSelect = "SELECT * FROM " + TablesComboBox.SelectedItem.ToString() + ";";
@@ -166,6 +170,21 @@ namespace WpfApp1
         private void HorsePower_OnClick(object sender, RoutedEventArgs e)
         {
             new HorsePower().Show();
+        }
+
+        private void FindVehicle_OnClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int response = int.Parse(Microsoft.VisualBasic.Interaction.InputBox("Give minimum number of km", "Vehicle", "Ex: 500000", 5, 5));
+                new Kilometers(response).Show();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR");
+                return;
+
+            }
         }
     }
 

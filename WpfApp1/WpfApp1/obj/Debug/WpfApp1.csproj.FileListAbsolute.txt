@@ -47,7 +47,7 @@ C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\AddWork.
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\AddWork.g.cs
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\numberofcars.baml
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\numberofcars.g.cs
-C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WorksAndDate.baml
-C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WorksAndDate.g.cs
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\HorsePower.baml
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\HorsePower.g.cs
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilometers.baml
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilometers.g.cs

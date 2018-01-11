@@ -36,6 +36,8 @@
             <Label Width="1" Background="Black"/>
             <Button Grid.Row="0" x:Name="Horsepower" Content="Order by Horse Power" BorderThickness="0" FontSize="15" Background="White" Width="150" Click="HorsePower_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
             <Label Width="1" Background="Black"/>
+            <Button Grid.Row="0" x:Name="FindVehicle" Content="Find vehicle by km" BorderThickness="0" FontSize="15" Background="White" Width="150" Click="FindVehicle_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
+            <Label Width="1" Background="Black"/>
         </StackPanel>
 
         <DataGrid Grid.Row="1" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True">

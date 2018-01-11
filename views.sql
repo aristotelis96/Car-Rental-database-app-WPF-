@@ -1,3 +1,4 @@
+DROP VIEW IF EXISTS numberofcars;
 CREATE VIEW numberofcars AS (
 	SELECT 	store.storeid as 'Store ID',
 			store.street as 'Street',
@@ -31,4 +32,3 @@ CREATE VIEW horsepower AS (
 	cylindercapacity as "Cylinder Capacity (cc)"
 	FROM vehicle
 	ORDER BY horsepower DESC);
-	
