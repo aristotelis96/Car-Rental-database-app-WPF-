@@ -13,7 +13,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             _drv = drv;
-            App.LastSelect = "SELECT works.*, employee.lastname as 'Surname' FROM Works inner join employee on employee.irs_number = works.irs_number where storeid="+ _drv["storeid"].ToString() + ";";
+            App.LastSelect = "SELECT works.*, employee.lastname as 'Surname' FROM Works INNER join employee on employee.irs_number = works.irs_number where storeid="+ _drv["storeid"].ToString() + ";";
             App.DataGrid = DataGrid;
             App.RefreshDataGrid();
         }

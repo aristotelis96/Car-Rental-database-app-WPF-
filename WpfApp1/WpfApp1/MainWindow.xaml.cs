@@ -197,7 +197,17 @@ namespace WpfApp1
 
         private void City_Click(object sender, RoutedEventArgs e)
         {
-            new Citizens().Show();
+            try
+            {
+                int response = int.Parse(Microsoft.VisualBasic.Interaction.InputBox("Give minimum number of citizens", "Population", "Ex: 1", 5, 5));
+                new Citizens(response).Show();
+            }
+            catch
+            {
+                MessageBox.Show("ERROR");
+                return;
+
+            }
         }
     }
 

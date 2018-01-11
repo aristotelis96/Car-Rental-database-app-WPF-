@@ -210,5 +210,8 @@
   <ItemGroup>
     <Resource Include="docs\MySqlCommand.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cars.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

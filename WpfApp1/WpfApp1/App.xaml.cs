@@ -37,8 +37,9 @@ namespace WpfApp1
             }
             catch
             {
-                MessageBox.Show("Something went wrong (Wrong key maybe?)!");
-                throw;
+                Connection.Close();
+                MessageBox.Show("Something went wrong (Wrong format maybe?)!");
+                throw new System.InvalidOperationException("Error");
             }
         }
 

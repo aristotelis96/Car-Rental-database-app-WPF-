@@ -11,6 +11,7 @@ CREATE VIEW numberofcars AS (
 	
 );	
 
+
 CREATE VIEW properemployee AS (
 	SELECT
 	firstname as "Name",
@@ -32,3 +33,5 @@ CREATE VIEW horsepower AS (
 	cylindercapacity as "Cylinder Capacity (cc)"
 	FROM vehicle
 	ORDER BY horsepower DESC);
+
+	

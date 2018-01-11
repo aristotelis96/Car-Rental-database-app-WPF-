@@ -11,21 +11,24 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="40">
+       
+        <Image Grid.Row="0" Height="150" Width="900" Margin="0" Stretch="Fill" 
+            Source="cars.png" VerticalAlignment="Top" Visibility="Visible"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="40">
             <ComboBox x:Name="TablesComboBox" SelectionChanged="TablesComboBox_OnSelectionChanged" Width="150" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0"/>
             <Label Width="1" Background="Black"/>
             <Button  Content="Add" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Add_OnClick"/>
             <Label Width="1" Background="Black"/>
             <Button Content="Edit" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Edit_OnClick"/>
             <Label Width="1" Background="Black"/>
-            <Button Content="Delete" BorderThickness="0" FontSize="20" Background="White" Width="100" Click="Delete_OnClick"/>
-            <Label Width="1" Background="Black"/>
+            <Button Content="Delete" BorderThickness="0" FontSize="20" Background="Red" Width="100" Click="Delete_OnClick"/>
+            <Label Width="1" Background="BLACK"/>
         </StackPanel >
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" Height="40" HorizontalAlignment="Right">
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="40" HorizontalAlignment="Right">
             <Button Grid.Row="0" x:Name="ViewPhones" Content="View Phones" BorderThickness="0" FontSize="15" Background="White" Width="100" Click="ViewPhones_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
             <Label Width="1" Background="Black"/>
             <Button Grid.Row="0" x:Name="ViewEmails" Content="View E-mails" BorderThickness="0" FontSize="15" Background="White" Width="100" Click="ViewPhones_OnClick" Visibility="Collapsed" HorizontalContentAlignment="Center" HorizontalAlignment="Right"/>
@@ -42,7 +45,7 @@
             <Label Width="1" Background="Black"/>
         </StackPanel>
 
-        <DataGrid Grid.Row="1" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True">
+        <DataGrid Grid.Row="2" x:Name="DataGrid" ItemsSource="{Binding}" SelectionMode="Single" ColumnWidth="100" FontSize="15" IsReadOnly="True">
             <DataGrid.CellStyle>
                 <Style TargetType="DataGridCell">
                     <Setter Property="BorderThickness" Value="0"/>

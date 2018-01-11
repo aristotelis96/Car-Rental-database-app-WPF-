@@ -15,8 +15,9 @@ values
 (10,'Draco','Malfoy','Slytherin','10','00123','Hogwarts'),
 (11,'Fred','Weasley','WeasleyHouse','1','123','Weasley'),
 (12,'James','Potter','Godricks','1','72000','Hollow'),
-(13,'Lily','Potter','Godricks','1','72000','Hollow');
-
+(13,'Lily','Potter','Godricks','1','72000','Hollow'),
+(14,'Lord','Voldemord','Forbidden','0','12300','Forest'),
+(15,'Vrasidas','Xlempouras','KwnKaiElenhs','15','12321','Athens');
 
 -- STORES --
 delete from store;
@@ -25,7 +26,11 @@ values
 (1,'Airport','','','Athens'),
 (2,'Port','','','Piraeus'),
 (3,'Stadiou','112','11630', 'Athina'),
-(4,'Mesaio','4','83200','Karlovasi');
+(4,'Mesaio','4','83200','Karlovasi'),
+(5,'Panormou','78','11231', 'Athina'),
+(6,'Kourtiou','15','11146', 'Athina'),
+(7,'Akadimias','74','11630', 'Athina'),
+(8,'Kufisias','142','11630', 'Athina');
 
 -- PHONES --
 delete from phonenumber;
@@ -47,10 +52,19 @@ values
 (2,2,'2015-01-01','Programmer'),
 (3,3,'2012-01-01','ProPUBG'),
 (4,4,'2010-01-01','Wizard'),
-(5,1,'2009-01-01','Useless'),
+(5,5,'2009-01-01','Useless'),
 (6,2,'2012-01-01','DoesAllTheWork'),
 (4,3,'2014-01-01','Seeker'),
-(2,1,'2015-01-01','SomeJob');
+(8,5,'2014-01-01','ERROR VALUE NOT FOUND'),
+(9,6,'2013-01-01','Riddler'),
+(10,7,'2015-01-01','WorstGuyInSeries'),
+(11,8,'2012-01-01','NothingSpecial'),
+(12,6,'2014-01-01','HeDead'),
+(13,6,'2014-01-01','DeadAsWell'),
+(15,7,'2013-01-01','TiKaneisTwraMwre?'),
+(14,2,'2015-01-01','MainBadGuy'),
+(2,1,'2015-01-01','SomeJob'),
+(14,1,'2015-01-01','AnotherJob');
 
 
 -- vehicle --
@@ -58,10 +72,10 @@ delete from vehicle;
 insert into vehicle(LicensePlate,Model,Make,Storeid, kilometers, horsepower)
 values
 ('MOA0001','Aygo','Toyota',2,40000,100),
-('MOA0002','T5','Audi',3,20000,210),
-('MOA0003','i3','Hyundai',2,120000,90),
-('MOA0004','i3','Hyundai',2,110000,90),
-('MOA0005','Yaris','Toyota',1,30000,130),
+('MOA0002','A1','Audi',3,20000,210),
+('MOA0003','i3','BMW',2,120000,90),
+('MOA0004','i3','BMW',2,110000,90),
+('MOA0005','Yaris','Toyota',1,30000,105),
 ('MOA0006','Fiesta','Ford',1,50000,110),
 ('MOA0007','Fiesta','Ford',1,50000,110),
 ('MOV0002','Seat','Ibiza',4,35000,140),
@@ -70,13 +84,22 @@ values
 ('MOV0005','Renault','Clio',2,40000,90),
 ('MOV0006','Renault','Clio',2,45000,90),
 ('MOV0007','Kia','Sportage',3,140000,140),
+('MOA8080','MX5','Mazda',4,180000,115),
 ('MOV0008','Duster','Ducia',3,90000,150);
 
 -- CUSTOMERS --
 delete from customer;
-insert into customer(customerID, firstname, lastname)
+insert into customer(customerID, firstname, lastname,firstregistration,irs_number)
 values
-(1,'pelatis','germanou');
+(1,'Marios','Giannaros','2011-12-21',5123),
+(2,'Niovi','Athanasopoulou','2012-02-29',3241),
+(3,'Aspasia','Valsamidou','2012-05-19',1232),
+(4,'Nikos','Vogiatzoglou','2013-02-20',4451),
+(6,'Stauros','Vasileiou','2013-10-02',4139),
+(7,'Kwstas','Vasileiou','2014-04-21',0341),
+(8,'Giannis','Lamprinidis','2015-03-12',5120),
+(9,'Sofia','Eugenikou','2016-05-23',1123);
+
 $$
 	DELIMITER ;
 	
