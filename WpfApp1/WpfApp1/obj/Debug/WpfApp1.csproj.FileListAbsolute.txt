@@ -36,7 +36,6 @@ C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WpfApp1.
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csproj.CoreCompileInputs.cache
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WpfApp1.exe
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
-C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojResolveAssemblyReference.cache
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Phones.baml
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Phones.g.cs
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\AddPhone.baml
@@ -53,3 +52,5 @@ C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilomete
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Kilometers.g.cs
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Citizens.baml
 C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\obj\Debug\Citizens.g.cs
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.CodeAnalysisLog.xml
+C:\Users\Aristotelis\Documents\GitHub\Aroulis\WpfApp1\WpfApp1\bin\Debug\WpfApp1.exe.lastcodeanalysissucceeded
