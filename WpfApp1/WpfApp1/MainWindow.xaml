@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen"
         Height="Auto" Width="Auto"
         mc:Ignorable="d"
-        Title="Baseis">
+        Title="Car Rental">
 
     <Grid>
         <Grid.RowDefinitions>

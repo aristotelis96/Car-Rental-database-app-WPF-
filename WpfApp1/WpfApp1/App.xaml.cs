@@ -35,10 +35,10 @@ namespace WpfApp1
                 DataTable.Load(Command.ExecuteReader());
                 Connection.Close();
             }
-            catch
+            catch (System.Exception e)
             {
                 Connection.Close();
-                MessageBox.Show("Something went wrong (Wrong format maybe?)!");
+                MessageBox.Show("Something went wrong (Wrong format maybe?)! \n" + e.ToString());                
                 throw new System.InvalidOperationException("Error");
             }
         }
