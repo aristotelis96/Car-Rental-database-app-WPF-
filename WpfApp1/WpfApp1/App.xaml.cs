@@ -37,6 +37,12 @@ namespace WpfApp1
             }
             catch (System.Exception e)
             {
+                if (e.InnerException.Message == "Unknown database 'company'")
+                {
+                    MessageBox.Show("You need to initialize the database. Note: Check 'my data.sql' file.");
+                    System.Windows.Application.Current.Shutdown();
+                    return;
+                }
                 Connection.Close();
                 MessageBox.Show("Something went wrong (Wrong format maybe?)! \n" + e.ToString());                
                 throw new System.InvalidOperationException("Error");
