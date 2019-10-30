@@ -75,3 +75,6 @@ C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Re
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\WpfApp1.csproj.CopyComplete
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\WpfApp1.exe
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\WpfApp1.pdb
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\Login.g.cs
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\WpfApp1_MarkupCompile.lref
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Release\Login.baml

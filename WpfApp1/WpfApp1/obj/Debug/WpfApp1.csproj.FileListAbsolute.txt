@@ -95,3 +95,7 @@ C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\bin\De
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\bin\Debug\Renci.SshNet.dll
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\bin\Debug\Google.Protobuf.xml
 C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\bin\Debug\Renci.SshNet.xml
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Debug\WpfApp1.csprojAssemblyReference.cache
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Debug\Login.g.cs
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Debug\WpfApp1_MarkupCompile.lref
+C:\Users\Aristotelis\Desktop\Car-Rental-database-app-WPF-\WpfApp1\WpfApp1\obj\Debug\Login.baml

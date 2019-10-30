@@ -16,12 +16,8 @@ namespace WpfApp1
         public static string LastSelect;
 
         public App()
-        {
-            ConnectionsString = "SERVER=localhost;DATABASE=company;UID=root;PASSWORD=8elopass;";
-            Connection = new MySqlConnection(ConnectionsString);
-
+        {            
             LastSelect = "SELECT * FROM EMPLOYEE";
-            RunCommand(LastSelect);
         }
 
         public static void RunCommand(string command)
@@ -39,10 +35,11 @@ namespace WpfApp1
             {
                 if (e.InnerException.Message == "Unknown database 'company'")
                 {
-                    MessageBox.Show("You need to initialize the database. Note: Check 'my data.sql' file.");
+                    MessageBox.Show("You need to initialize the database. Note: Check 'myWdata.sql' file.");
                     System.Windows.Application.Current.Shutdown();
                     return;
                 }
+                if(e.InnerException.Message == "")
                 Connection.Close();
                 MessageBox.Show("Something went wrong (Wrong format maybe?)! \n" + e.ToString());                
                 throw new System.InvalidOperationException("Error");

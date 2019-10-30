@@ -15,6 +15,7 @@ namespace WpfApp1
             InitializeTablesComboBox();
             App.DataGrid = DataGrid;
             App.RefreshDataGrid();
+          
         }
       
         public void InitializeTablesComboBox()
