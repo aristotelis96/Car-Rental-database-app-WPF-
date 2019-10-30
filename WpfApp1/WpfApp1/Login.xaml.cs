@@ -28,8 +28,18 @@ namespace WpfApp1
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            App.ConnectionsString = "SERVER=" + server.Text + ";DATABASE=" + database.Text + ";UID=" + username.Text + ";PASSWORD=" + password.Password + ";";            
-            App.Connection = new MySqlConnection(App.ConnectionsString);
+            try
+            {
+                App.ConnectionsString = "SERVER=" + server.Text + ";DATABASE=" + database.Text + ";UID=" + username.Text + ";PASSWORD=" + password.Password + ";";
+                App.Connection = new MySqlConnection(App.ConnectionsString);
+                App.Connection.Open();
+                App.Connection.Close();             
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                return;
+            }
             new MainWindow().Show();
             Close();
         }
